@@ -51,8 +51,6 @@ public class Ex01_array {
 			System.out.println(arr[i]); // 2번
 		} // 두가지 코드가 완벽하게 동일/ 2번 코드법 공부하기
 		
-		
-		
 	}
 	
 	public static void ex03() {
@@ -179,14 +177,11 @@ public class Ex01_array {
 	
 	public static void ex09() {
 		
-		String[] seoson = {"겨울", "봄", "여름", "가을"};
-		
 		int month = 10;
 		
-		System.out.println(month + "월은 " + seoson[month % 12 / 3] + "이다.");
-		
+		String[] seoson = {"겨울", "봄", "여름", "가을"};
+		System.out.println(month + "월은 " + seoson[month % 12 / 3] + "이다.");	
 	}
-	
 	
 	public static void main(String[] args) {
 //		ex01();

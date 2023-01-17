@@ -5,7 +5,6 @@ public class MainClass {
 	public static void ex01() {
 		
 		// User 객체 생성(User() 생성자 호출)
-		
 		User user1 = new User();
 		
 		// user1의 info 메소드 호출

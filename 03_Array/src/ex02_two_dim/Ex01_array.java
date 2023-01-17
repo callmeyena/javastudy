@@ -19,7 +19,6 @@ public class Ex01_array {
 			}
 			System.out.println();
 		}
-		
 	}
 
 	public static void ex02() {
@@ -58,7 +57,7 @@ public class Ex01_array {
 		
 		// 2차원 배열 순회
 		for(int i = 0; i < arr.length; i++) {
-			for(int j = 0; j < arr[i].length; j++) {
+			for(int j = 0; j < arr[j].length; j++) {
 				System.out.print(arr[i][j] + "\t");
 			}
 			System.out.println();
@@ -83,9 +82,10 @@ public class Ex01_array {
 	}
 	
 	public static void main(String[] args) {
+//		ex01();
 //		ex02();
-//		ex03();
-		ex04();
+		ex03();
+//		ex04();
 
 	}
 

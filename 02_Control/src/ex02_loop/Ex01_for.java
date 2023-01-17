@@ -74,11 +74,31 @@ public class Ex01_for {
 		
 	} // ex04 메소드의 끝
 	
+	
+	public static void ex05() { // 나 혼자 만든거
+		
+		// 모금
+		int goal = 1500000;
+		int money = 1500;
+		int total = 0;
+		int n = 0;
+		
+		for(;;) {
+			if(total >= goal) {
+				break;
+			} else {
+				total += money;
+			}
+			System.out.println(++n + "회 모금액: " + money + "원, 현재 모금액: " + total + "원");
+		}
+
+	} //
 	public static void main(String[] args) {
 //		ex01();
 //		ex02();
 //		ex03();
-		ex04();
+//		ex04();
+		ex05();
 
 	}
 
