@@ -62,7 +62,6 @@ public class Ex01_array {
 			}
 			System.out.println();
 		}
-		
 	}
 
 	public static void ex04() {
@@ -84,8 +83,8 @@ public class Ex01_array {
 	public static void main(String[] args) {
 //		ex01();
 //		ex02();
-		ex03();
-//		ex04();
+//		ex03();
+		ex04();
 
 	}
 

@@ -109,8 +109,17 @@ public class Ex01_String {
 		String familyName = name.substring(0, 1); // 성
 		String givenName = name.substring(1); // 이름
 		
+		String name2 = "차은우";
+		String fullName = name2.substring(0);
+		String familyName2 = name2.substring(0, 1);
+		String givenName2 = name2.substring(1);
+		
 		System.out.println(familyName);
 		System.out.println(givenName);
+		
+		System.out.println(fullName);
+		System.out.println(familyName2);
+		System.out.println(givenName2);
 		
 					
 		}
@@ -128,16 +137,32 @@ public class Ex01_String {
 		
 		String slogan = "걱정한다고 걱정이 없어지면 걱정이 없겠네.";
 		
-		int idx1 = slogan.indexOf("걱정");
+		int idx1 = slogan.indexOf("걱정"); 			 // 걱정이라는 문자열이 있으면 걱정의 index위치값인 0 반환, 없으면 -1
 		int idx2 = slogan.indexOf("걱정", idx1 + 1); // 첫번째 걱정의 위치 다음부터 찾으면 된다는 뜻
-		int idx3 = slogan.indexOf("걱정", idx2 + 1);
+		int idx3 = slogan.indexOf("걱정", idx2 + 1); 
 		
-		int idx4 = slogan.indexOf("박예나");
+		int idx4 = slogan.indexOf("박예나");		 // -1 반환
 		
 		System.out.println(idx1);
 		System.out.println(idx2);
 		System.out.println(idx3);
 		System.out.println(idx4);
+		
+		System.out.println();
+		
+		String slogan2 = "서강 그대의 자랑이듯, 그대 서강의 자랑이어라";
+		
+		int idx_1 = slogan2.indexOf("서강"); 		 		 // 서강이라는 문자열이 있기 때문에 서강의 첫번째 index 위치값인 0 반환
+		int idx_2 = slogan2.indexOf("서강", idx_1 + 1);		 // 첫번 째 "서강"의 위치 다음부터 찾으면 된다 
+		int idx_3 = slogan2.indexOf("서강", idx_2 + 1); 	 // 두번 째 "서강"의 위치 다음부터 찾으면 됨 => 더이상 "서강"이라는 문자열 없음 => -1 반환
+		
+		int idx_4 = slogan2.indexOf("세종대학교");			 // -1 반환
+		
+		System.out.println(idx_1);
+		System.out.println(idx_2);
+		System.out.println(idx_3);
+		System.out.println(idx_4);
+		
 	}
 	
 	public static void lastIndexOf() {
@@ -156,7 +181,7 @@ public class Ex01_String {
 	
 	public static void startsWith() {
 		
-		// startWith
+		// startsWith
 		// 문자열이 지정된 정규식 패턴(Regular Expression)으로 시작하면 true 반환 아니면 false 반환
 		
 		String name = "박예나";
@@ -192,6 +217,12 @@ public class Ex01_String {
 			System.out.println("이메일이 아니다.");	
 		}
 		
+		String email2 = "rksk365@gmail.com";
+		if(email2.contains("@gmail.com")) {
+			System.out.println("구글 이메일이다.");
+		} else {
+			System.out.println("구글 이메일이 아니다");
+		}
 		
 	}
 	
@@ -205,6 +236,7 @@ public class Ex01_String {
 		
 		String str = "I am a Girl";
 		String str2 = "If I were you, I didn't choice like that";
+		
 		System.out.println(str.toUpperCase());
 		System.out.println(str.toLowerCase());
 		System.out.println(str2.toUpperCase());
@@ -214,16 +246,20 @@ public class Ex01_String {
 	public static void trim() {
 		
 		// trim
-		// 문자열의 앞뒤에 포함된 공백문자(스페이스, 탭, 엔터 등)를 제거
+		// 문자열의 앞뒤에 포함된 공백문자(스페이스, 탭, 엔터 등)를 제거 / 문자열들 가운데에 있는 공백은 제거되지 않는다.
 		
 		String str = "   hahaha   hohoho   ";
 		System.out.println("(" + str + ")"); 
 		System.out.println("(" + str.trim() + ")"); 
+		
+		String str2 = "        s s s s s Iphone12 pro WOw    ";
+		System.out.println(str2);
+		System.out.println("(" + str2.trim() + ")");
 	}
 	
 	public static void replace() {
 		
-		// replace(모두 바꿔줌 replaceAll이랑 헷갈리기 ㄴㄴ)
+		// replace(모두 바꿔줌 이름만 보고 replaceAll이랑 헷갈리기 ㄴㄴ)
 		// 기존 문자열을 새로운 문자열로 변환한 결과를 반환
 		
 		// replace 사용법
