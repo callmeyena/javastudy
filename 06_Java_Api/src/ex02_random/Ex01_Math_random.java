@@ -11,15 +11,33 @@ public class Ex01_Math_random { // 열공
 			System.out.println("대박");
 		} else {
 			System.out.println("꽝");
+		}	
+	}
+	
+	public static void ex02() {
+		/* 
+			난수 생성하기
+			Math.random()				0.0 <= n < 1.0
+			Math.random() * 3			0.0 <= n < 3.0
+			(int) (Math.random() * 3)	  0 <= n < 3
+			(int) (Math.random() * 3) + 1 1 <= n < 4
+			-------------------------------
+			(int)(Math.random() * 개수) + 시작값
+		 */
+		
+		StringBuilder sb = new StringBuilder();
+		for(int count = 0; count < 6; count++) {
+			sb.append((int)(Math.random() * 10) );
 		}
 		
-	}
+		String code = sb.toString();
+		System.out.println(code);
+		
+	} //
 	
 
 	public static void main(String[] args) {
-		ex01();
-		
-		
+		ex02();
 
 	}
 
