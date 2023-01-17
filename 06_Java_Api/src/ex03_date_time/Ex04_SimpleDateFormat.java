@@ -8,6 +8,7 @@ public class Ex04_SimpleDateFormat { // 암기
 	public static void ex01() {
 
 	/*
+	  	빨리 외워주시궜어요?
 	  형식(pattern) 2023년 01월 17일 14시 08분 기준
 	  1. yy: 년도/ 00년 ex)23년
 	  2. yyyy: 0000년 ex)23년

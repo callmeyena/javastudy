@@ -1,10 +1,11 @@
 package ex03_date_time;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class Ex05_LocalDateTime {
+public class Ex06_LocalDateTime { // ctrl + space로 메소드 태그해서 imort문 생성되게 하는 거 연습하기
 	
 	/*
 	 	날짜: java.time.LocalDate
@@ -46,8 +47,51 @@ public class Ex05_LocalDateTime {
 		
 	}
 
+	public static void ex03() {
+		
+		// LocalDateTime
+		
+		LocalDateTime dateTime1 = LocalDateTime.now(); // 현재 날짜와 시간
+		System.out.println(dateTime1);
+		
+		LocalDateTime dateTime2 = LocalDateTime.of(2023, 1, 17, 15, 4, 30); // 2023-01-17 15:04:30
+		System.out.println(dateTime2);
+		
+		LocalDateTime dateTime3 = LocalDateTime.parse("2023-01-17T15:04:30");
+		System.out.println(dateTime3);
+		
+	}
+	
+	public static void ex04() {
+		
+		LocalDateTime now = LocalDateTime.now();
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 E요일 a hh시 mm분 ss초");
+		String strNow = dtf.format(now);
+		System.out.println(strNow);
+	}
+	
+	public static void ex05() {
+		
+		LocalDateTime now = LocalDateTime.now(); // 코드계의 MZ
+		
+		// 년, 월, 일, 시, 분, 초
+		int year = now.getYear();
+		int month = now.getMonthValue(); 	// 월(1~12)
+		int day = now.getDayOfMonth();
+		int hour = now.getHour(); 			// 시(0~23)
+		int minute = now.getMinute(); 
+		int second = now.getSecond();
+		
+		System.out.println(year);
+		System.out.println(month);
+		System.out.println(day);
+		System.out.println(hour);
+		System.out.println(minute);
+		System.out.println(second);
+	}
 	public static void main(String[] args) {
-		ex02();
+		ex05();
 	}
 
 }
