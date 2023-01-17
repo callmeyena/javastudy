@@ -2,7 +2,7 @@ package ex02_random;
 
 import java.util.Random;
 
-public class Ex02__random {
+public class Ex02_Random {
 	
 	/*
 	 	import // 얘만 공부하자

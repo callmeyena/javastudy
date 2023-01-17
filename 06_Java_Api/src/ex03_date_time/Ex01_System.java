@@ -21,12 +21,31 @@ public class Ex01_System {
 		 	시간 단위
 		 	second > ㎳(밀리초) > ㎲(마이크로초) > ㎱(나노초) > ㎰(피코초)		
 		 */
+		
+		// String의 +(플러스)연산과 StringBuilder의 append 메소드 성능 확인하기
+		String str = "";
+		StringBuilder sb = new StringBuilder();
+		
+		// 시작시간
 		long nanoTime1 = System.nanoTime();
-		System.out.println(nanoTime1);
+		
+		// 작업수행
+		for(char ch = 'A'; ch <= 'Z'; ch++) {
+//			str += ch;  // 126800ns
+			sb.append(ch); // 12600ns
+		}
+		
+		// 종료시간
+		long nanoTime2 = System.nanoTime();
+		
+		// 결과 확인
+		System.out.println("작업수행시간: " + (nanoTime2 - nanoTime1) + "ns");
+		
+		
 	}
 
 	public static void main(String[] args) {
-		ex01();
+//		ex01();
 		ex02();
 
 	}
