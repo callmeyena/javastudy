@@ -334,7 +334,7 @@ public class Ex01_String {
 	public static void ex01() {
 		String url = "https://comic.naver.com/webtoon/detail?titleId=802039&no=13&weekday=mon"; // 깨알팁 모든 인터넷 주소는 물음표? 하나만 들어갈 수 있다. => indexOf("?") => -1이 아니어야함
 		
-		String requestURI = url.substring(0, url.indexOf("?"));	// https://comic.naver.com/webtoon/detail" 까지만 나오게 하는 법	
+		String requestURI = url.substring(0, url.indexOf("?"));	// https://comic.naver.com/webtoon/detail" 까지만 나오게 하는 법
 		System.out.println(requestURI);
 		
 		String params = url.substring(url.indexOf("?") + 1);
@@ -382,8 +382,8 @@ public class Ex01_String {
 //		trim();
 //		replace();
 //		isEmpty();
-		format();
-//		ex01();
+//		format();
+		ex01();
 //		ex02();
 		
 
