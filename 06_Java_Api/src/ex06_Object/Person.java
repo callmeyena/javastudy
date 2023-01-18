@@ -1,9 +1,12 @@
 package ex06_Object;
 
 public class Person {
+
 	
+	// 필드값
 	private String name;
 	
+	// 생성자
 	public Person() {
 		
 	}
@@ -12,6 +15,9 @@ public class Person {
 		this.name = name;
 	}
 	
+	
+	
+	// getter, setter
 	public String getName() {
 		return name;
 	}
