@@ -39,7 +39,6 @@ public class MainClass {
 		 	2. 개발자가 직접 예외를 처리할 때 사용한다.
 		 */
 		
-		
 		Scanner sc = null;
 		
 		try {
@@ -47,7 +46,7 @@ public class MainClass {
 			System.out.println("나이를 입력하세요. >>> ");
 			int age = sc.nextInt();
 			if(age < 0 || age > 100) {
-				throw new RuntimeException(age + "살은 불가능 합니다."); // catch로 던진다 RuntimeException 사용하자
+				throw new RuntimeException(age + "살은 불가능 합니다."); // catch로 던진다(= to catch) RuntimeException 사용하자
 				
 			}
 			System.out.println(age >= 20 ? "주류 구매 가능" : "주류 구매 불가능"); 
@@ -58,7 +57,7 @@ public class MainClass {
 		}
 		
 	} // 
-	
+	 
 	public static void main(String[] args) {
 //		ex01();
 //		ex02();

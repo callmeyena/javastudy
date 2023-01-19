@@ -72,7 +72,7 @@ public class MainClass {
 		try {
 		FileReader fr = new FileReader("sample.txt"); 
 		// 만약 sample.txt가 없으면 어떻게 할 것인지 대비책이 없기 때문에 빨간줄 뜸 => 예외처리(try&catch) 하셈 => 필수적으로 예외처리 해야됨 => Checked Exception
-		fr.close(); // 빨간줄(오류) 나타나는 거 없애기
+		fr.close(); // 빨간줄(오류) 나타나는 거 없애기 => 말그대로 클로즈
 		} catch(Exception e) {
 			System.out.println("예외 처리");
 		}		
