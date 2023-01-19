@@ -1,10 +1,11 @@
 package ex01_try_catch;
 
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class MainClass {
 	
-	public static void ex01() { // try&catch 하세요 하면 아래 try catch 하면 됨. 완전 기본 양식만 암기해두자
+	public static void ex01() { // try&catch 안하면 안돌아가는 코드가 존재한다! 그때는 꼭 try&catch 처리 해줘야 함
 		
 		try {
 			
@@ -65,11 +66,23 @@ public class MainClass {
 			System.out.println("예외가 발생했습니다.");
 		} // catch 다중 패치 블록이 가능한데, 마지막 catch블록은 Exception으로 모든 예외를 처리한다.	
 	} //
+
+	public static void ex04() {
+		
+		try {
+		FileReader fr = new FileReader("sample.txt"); 
+		// 만약 sample.txt가 없으면 어떻게 할 것인지 대비책이 없기 때문에 빨간줄 뜸 => 예외처리(try&catch) 하셈 => 필수적으로 예외처리 해야됨 => Checked Exception
+		fr.close(); // 빨간줄(오류) 나타나는 거 없애기
+		} catch(Exception e) {
+			System.out.println("예외 처리");
+		}		
+	}
 	
 	public static void main(String[] args) {
 //		ex01();
 //		ex02();
-		ex03();
+//		ex03();
+		ex04();
 
 	}
 

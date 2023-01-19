@@ -16,6 +16,7 @@ public class Gun {
 	private int bullet;
 	private final int MAX_BULLET = 20;
 	
+	
 	// 메소드 getter and setter
 
 	public String getModel() {

@@ -11,12 +11,12 @@ public class CoffeeMachine {
 	coffeeAndChange buyCoffee(int money, int choice) {
 		
 		// 돈이 모자르면 그대로 돈을 반환해보기
-		int price = prices[choice -1];
+		int price = prices[choice - 1];
 		if(money < price) { // 아메 900원이 입력
 			coffeeAndChange cnc = new coffeeAndChange();
 			cnc.change = money;
 			return cnc;
-		};
+			}
 		
 		
 		// 돈이 안모자를때 동작함
