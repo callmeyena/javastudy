@@ -50,7 +50,7 @@ public class ParkingLot {
 //			int choice = sc.nextInt(); // 비비비비추천. 에러남
 			
 			String choice = sc.next();
-			
+		
 			switch(choice) {
 			case "1":
 				addCar(); 			// addCar 호출

@@ -13,7 +13,27 @@ public class Espresso {
 		this.coffeeBean = coffeeBean;
 		this.water = water;
 	}
-	
+
 	// 필요한 메소드
+	public CoffeeBean getCoffeeBean() {
+		return coffeeBean;
+	}
+
+	public void setCoffeeBean(CoffeeBean coffeeBean) {
+		this.coffeeBean = coffeeBean;
+	}
+
+	public int getWater() {
+		return water;
+	}
+
+	public void setWater(int water) {
+		this.water = water;
+	}
+	
+	public void info() {
+		coffeeBean.info();
+		System.out.println("물 ml : " + water + "ml");
+	}
 	
 }
