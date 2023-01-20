@@ -8,4 +8,5 @@ public class ParkingLotMain {
 		parkingLot.manage();
 		
 	}
+
 }
