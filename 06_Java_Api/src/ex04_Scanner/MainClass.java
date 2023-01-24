@@ -30,7 +30,7 @@ public class MainClass {
 		
 		// String 입력
 		System.out.println("이름이 뭐예요? >>>");
-		String name = sc.next();
+		String name = sc.nextLine();
 		System.out.println("입력 된 이름은 " + name + "입니다.");
 		
 		// int 입력

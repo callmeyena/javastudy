@@ -1,7 +1,7 @@
 package practice07_Coffee;
 
 public class MainClass {
-
+	
 	public static void main(String[] args) {
 		
 		// 브라질 원두

@@ -15,6 +15,9 @@ public class MainClass { // 많이 나오는 문법
 		box2.setItem("객체 거지같아");
 		System.out.println(box2.getItem());
 		
+		Box<Double> box3 = new Box<Double>();
+		box3.setItem(5.0 * 2.2);
+		System.out.println(box3.getItem());
 		
 		
 	} //
