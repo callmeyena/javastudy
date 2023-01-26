@@ -13,7 +13,7 @@ public class Person {	// 진짜 많이 만드는 클래스의 대표 일명 'Bea
 	
 	// 생성자
 	public Person() {}  // new Person() 
-						// 이름과 나이가 없는 사람이니 나중에 이름과 나이를 바꿔줄 수 있는 메소드가 필요하겠구나 라고 생각해야된다시발.. => getter and setter 설정
+						// 이름과 나이가 없는 사람이니 나중에 이름과 나이를 바꿔줄 수 있는 메소드가 필요하겠구나 라고 생각해야된다씨앙.. => getter and setter 설정
 	public Person(String name, int age) {  // new Person("alice", 20)
 		this.name = name;
 		this.age = age;

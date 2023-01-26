@@ -27,7 +27,7 @@ public class Bakery {
 		int change = money % breadPrice;
 		
 		// 고객에게 돌려 줄 BreadAndChange 객체 생성
-		BreadAndChange bnc = new BreadAndChange(sellBread, change);
+		BreadAndChange bnc = new BreadAndChange(sellBread, change); // 판 빵, 잔돈을 주기 위한 중간 매체 쯤
 		
 		// Bakery 판매처리(빵은 줄었고, 돈은 늘었다.)
 		breadCount -= sellBread;
