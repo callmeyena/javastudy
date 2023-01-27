@@ -124,8 +124,8 @@ public class JSONMainClass { // 조낸 중요...힝입니다............ㅠ개�
 		System.out.println();
 		
 		// 2. 향상 for문
-		for(Object obj : products) {
-			JSONObject product = (JSONObject)obj;
+		for(Object obj : products) {					// 향상 for문에서는 JSONObject 타입 사용 불가
+			JSONObject product = (JSONObject)obj;		// 가장 최상위 클래스인 Object를 대입후 JSONObject에 다시 casting
 			String model = product.getString("model");
 			String maker = product.getString("maker");
 			int price = product.getInt("price");

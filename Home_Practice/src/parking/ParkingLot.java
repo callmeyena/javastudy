@@ -1,45 +1,73 @@
 package parking;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ParkingLot {
 	
 	private String name;
-	private Car[] cars; 				// cars[idx] = new Car("", "");			
-	private int idx; 					// idx++; / 즉 idx가 주차장에 저장된 자동차의 개수이기도 하다						
+	private List<Car> cars;
+	private int idx;
 	private Scanner sc;
+	private int max;
 	
-	public ParkingLot(String name) {
+	public ParkingLot(String name, int max) {
+		super();
 		this.name = name;
-		cars = new Car[10]; 			// 주차장에 총 10대 주차 가능
+		this.max = max;
+		cars = new ArrayList<Car>();
 		sc = new Scanner(System.in);
 	}
 	
-	public void addCar() { 				// 현재 등록된 차량이 몇 대인지 보여주기 
-		System.out.println("현재 등록된 차량: " + idx + "대");
-		if(idx == cars.length) {		// idx와 cars 배열의 길이 10인 cars.length
-			System.out.println("더 이상 차량 등록이 불가능 합니다.");
+	public void addCar() {
+		System.out.println("현재 등록 된 차량: " + cars.size() + "대");
+		if(cars.size() == max) {
 			return;
 		}
 		
-//		System.out.println("차량번호와 모델명을 순서대로 입력하세요.");
-//		Car car = new Car(sc.next(), sc.next()); // 객체를 이용한 저장 방법
-		
 		System.out.print("차량번호 >>> ");
-		String carNo = sc.next(); 		// 공백 없는 문자열은 next
+		String carNo = sc.next();
 		System.out.print("모델 >>> ");
-		String carModel = sc.next(); 
-		cars[idx++] = new Car(carNo, carModel); // new...흑...ㅠ눈물..
-		System.out.println("차량번호" + carNo + " 차량이 등록 되었습니다.");		
+		String model = sc.next();
+		
+		cars.add(new Car(carNo, model));
+		System.out.println("차량번호" + carNo + " 차량이 등록 되었습니다.");	
 	}
 	
 	public void deleteCar() {
+		System.out.println("현재 등록 된 차량: " + cars.size() + "대");
+		if(cars.size() == 0) {
+			return;
+		}
 		
+		System.out.print("차량번호 >>> ");
+		String carNo = sc.next();
+		for(Car c : cars) {
+			if(carNo.equals(c.getCarNo())) {
+				cars.remove(c);
+				System.out.println("차량 번호 " + carNo + "가 삭제 되었습니다.");
+				return;
+			}
+		}
+		System.out.println("대상 차량이 존재하지 않습니다.");
+			
 	}
 	
 	public void printAllCars() {
+		if(cars.size() == 0) {
+			System.out.println("현재 등록 된 차량이 없습니다.");
+			return;
+		}
+		
+		System.out.println(name + " 차량 목록");
+		for(Car c : cars) {
+			System.out.println(c);
+		}
 		
 	}
+		
+	
 	
 	public void manage() {
 		
@@ -66,8 +94,6 @@ public class ParkingLot {
 			default:
 				System.out.println("존재하지 않는 메뉴입니다.");
 			}
-			
 		}
 	}
-	
 }

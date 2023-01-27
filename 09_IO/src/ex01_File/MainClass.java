@@ -34,7 +34,7 @@ public class MainClass {
 			System.out.println("C:" + File.separator + "storage 삭제 완료");
 //			dir.deleteOnExit();  			// JVM실행이 끝나면 지운다
 		}
-			
+		
 		
 	}
 

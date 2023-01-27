@@ -1,99 +1,75 @@
 package parking;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class ParkingLot {
-	
+
 	private String name;
-	private List<Car> cars;
-	private int idx;
+	private Car[] cars; 	// cars[idx] = new Car("", "");	
+	private int idx;		// idx++; / 즉 idx가 주차장에 저장된 자동차의 개수이기도 하다
 	private Scanner sc;
-	private int max;
-	
-	public ParkingLot(String name, int max) {
-		super();
+
+	public ParkingLot(String name) {
 		this.name = name;
-		this.max = max;
-		cars = new ArrayList<Car>();
+		cars = new Car[10];
 		sc = new Scanner(System.in);
 	}
-	
+
 	public void addCar() {
-		System.out.println("현재 등록 된 차량: " + cars.size() + "대");
-		if(cars.size() == max) {
+		System.out.println("현재 등록된 차량 : " + idx + "대");
+		if (idx == cars.length) {
+			System.out.println("더 이상 차량 등록이 불가능합니다.");
 			return;
 		}
-		
-		System.out.print("차량번호 >>> ");
+		System.out.println("차량번호 >>>");
 		String carNo = sc.next();
-		System.out.print("모델 >>> ");
+
+		System.out.println("모델명 >>>");
 		String model = sc.next();
-		
-		cars.add(new Car(carNo, model));
-		System.out.println("차량번호" + carNo + " 차량이 등록 되었습니다.");	
+
+		cars[idx++] = new Car(carNo, model);
+		System.out.println("차량번호 " + carNo + "차량이 등록되었습니다.");
+;
+
 	}
-	
+
 	public void deleteCar() {
-		System.out.println("현재 등록 된 차량: " + cars.size() + "대");
-		if(cars.size() == 0) {
-			return;
-		}
-		
-		System.out.print("차량번호 >>> ");
-		String carNo = sc.next();
-		for(Car c : cars) {
-			if(carNo.equals(c.getCarNo())) {
-				cars.remove(c);
-				System.out.println("차량 번호 " + carNo + "가 삭제 되었습니다.");
-				return;
-			}
-		}
+		//System.out.println("차량번호" + carNo +"차량이 삭제되었습니다.");
 		System.out.println("대상 차량이 존재하지 않습니다.");
-			
 	}
-	
+
 	public void printAllCars() {
-		if(cars.size() == 0) {
-			System.out.println("현재 등록 된 차량이 없습니다.");
-			return;
+			System.out.println("대박주차장");		
+			if (idx ==10)
+				System.out.println("등록된 차량이 없습니다.");
+				return;
 		}
-		
-		System.out.println(name + " 차량 목록");
-		for(Car c : cars) {
-			System.out.println(c);
-		}
-		
-	}
-		
-	
-	
+
 	public void manage() {
-		
-		while(true) {
+
+		while (true) {
 			
-			System.out.print("1.추가 2.삭제 3.전체 0.종료 >>> ");
 			
+			System.out.println("1.추가 2.삭제 3.전체 0.종료 >>>");
 //			int choice = sc.nextInt(); // 비비비비추천. 에러남
-			
-			String choice = sc.next();
-		
-			switch(choice) {
-			case "1":
-				addCar(); 			// addCar 호출
+			int choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				addCar();
 				break;
-			case "2":
-				deleteCar(); 		// deletCar 호출
+			case 2:
+				deleteCar();
 				break;
-			case "3":
-				printAllCars(); 	// printAllCars 호출
+			case 3:
+				printAllCars();
 				break;
-			case "0":
-				return; 			// manage 메소드 종료 / return은 메소드 전체(while문)을 빠져나가는 것
+			case 0:
+				return;
 			default:
-				System.out.println("존재하지 않는 메뉴입니다.");
+				System.out.println("존재하지 않는 메뉴 입니다.");
 			}
+
 		}
 	}
 }

@@ -35,14 +35,14 @@ public class CSVMainClass {
 		 product1.put("price", 100);	// value가 저장하려는 데이터! value가 중요한 것....
 		 
 		 Map<String, Object> product2 = new HashMap<String, Object>();
-		 product1.put("model", "냉장고");
-		 product1.put("maker", "LG");
-		 product1.put("price", 200);
+		 product2.put("model", "냉장고");
+		 product2.put("maker", "LG");
+		 product2.put("price", 200);
 		 
 		 Map<String, Object> product3 = new HashMap<String, Object>();
-		 product1.put("model", "TV");
-		 product1.put("maker", "삼성");
-		 product1.put("price", 300);
+		 product3.put("model", "TV");
+		 product3.put("maker", "삼성");
+		 product3.put("price", 300);
 		
 		 List<Map<String, Object>> products = Arrays.asList(product1, product2, product3);	// list 1번 방법
 		 
