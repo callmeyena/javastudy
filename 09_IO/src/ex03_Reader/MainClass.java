@@ -1,5 +1,6 @@
 package ex03_Reader;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -106,9 +107,62 @@ public class MainClass {	// ex02 달달달 외워벌이기~~~  ex01은 현실적
 		
 	}
 	
+	public static void ex03() {
+		
+		/*
+		 	 BufferedReader의 장점
+		 	 1. 속도가 빠르다.
+		 	 2. readLine 메소드를 사용할 수 있다.
+		*/
+		
+		File dir = new File("C:" + File.separator + "storage");
+		if(dir.exists() == false) {
+			dir.mkdirs();
+		}
+		
+		File file = new File(dir, "ex03.txt");
+		
+		BufferedReader br = null;
+		
+		try {
+			br = new BufferedReader(new FileReader(file));	// 읽어들이는 속도가 빨라지는 입력 스트림이 된다!
+			
+			String line = null;
+			StringBuilder sb = new StringBuilder();
+			while((line = br.readLine()) != null) { 
+				sb.append(line);
+			}
+			
+			System.out.println(sb.toString());
+			
+//			char[] cbuf = new char[5];
+//			int readCount = 0;
+//			StringBuilder sb2 = new StringBuilder();
+//			
+//			while((readCount = br.read(cbuf)) != -1) {
+//				sb.append(cbuf, 0, readCount);
+//			}
+//			
+//			System.out.println(sb.toString());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();		                
+			}
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 //		ex01();
-		ex02();
+//		ex02();
+		ex03();
 			
 	}
 

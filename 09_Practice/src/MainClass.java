@@ -1,5 +1,7 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -239,8 +241,75 @@ public class MainClass {
 		
 	}
 
+	// 문제 6. C:\storage\diary.txt파일을 C:\diary.txt 파일로 이동하시오.
+	// 파일을 이동하면 기존의 원본은 삭제하면 된다 그거 처음에 우리가 배웠던거 예나야 이것도 못하면 넌 어제오늘 한게 없다..
+	public static void ex09() throws IOException {
+		
+		File dir = new File("C:" + File.separator + "storage");
+	 	if(dir.exists() == false) {
+			dir.mkdirs();
+		}
+		
+		File file = new File(dir, "diary.txt");
+		
+		BufferedReader br = null;
+		StringBuilder sb = null;
+		
+		try {
+			br = new BufferedReader(new FileReader(file));
+			
+			String line = null;
+			sb =  new StringBuilder();
+			while((line = br.readLine()) != null) {
+				sb.append(line);
+			}
+			
+			System.out.println(sb.toString());
+
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		File dir2 = new File("C:" + File.separator + "storage2");
+		if(dir2.exists() == false) {
+			dir2.mkdirs();
+		}
+		
+		File file2 = new File(dir2, "diary.txt");
+		if(file2.exists() == false) {
+			file2.createNewFile();
+		}
+		
+		PrintWriter out = null;
+		
+		try {
+			out = new PrintWriter(file2);
+			
+			out.println(sb.toString());
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		} 
+				
+		
+		
 	
-	public static void main(String[] args) { // main 메소드를 호출하는 곳으로 예외처리를 넘긴다.(개발자가 try-catch 하지 않겠다.)
+			
+
+		
+		
+		
+	} //
+	
+	public static void main(String[] args) throws IOException { // main 메소드를 호출하는 곳으로 예외처리를 넘긴다.(개발자가 try-catch 하지 않겠다.)
 //		ex01();
 //		ex02();
 //		ex03();
@@ -249,7 +318,8 @@ public class MainClass {
 //		ex06();
 //		ex05();
 //		ex07();
-		ex08();
+//		ex08();
+		ex09();
 		
 	}
 
