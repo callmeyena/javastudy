@@ -26,7 +26,7 @@ public class CSVMainClass {
 			
 			String line = null;
 			while((line = br.readLine()) != null) {
-				 String[] items = line.split(",");	// split 메소드 자체에 ,를 기준으로 쪼개서 객체를 생성한다고 볼 수 있다.
+				 String[] items = line.split(",");	// split 메소드 자체에 ,를 기준으로 쪼개서 new 객체를 생성한다고 볼 수 있다.
 				 Map<String, Object> product = new HashMap<String, Object>();
 				 product.put("model", items[0]);
 				 product.put("maker", items[1]);

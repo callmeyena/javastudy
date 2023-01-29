@@ -23,20 +23,19 @@ public class JSONMainClass {
 		
 		try {
 			
-			br = new BufferedReader(new FileReader(file)); 
+			br = new BufferedReader(new FileReader(file));
 			
 			String line = null;
 			StringBuilder sb = new StringBuilder();
-			
 			while((line = br.readLine()) != null) {
 				sb.append(line);
 			}
 			
 			JSONArray arr = new JSONArray(sb.toString());
-			List<Map<String, Object>> products = new ArrayList<Map<String, Object>>();
-			for(int i = 0; i < arr.length(); i ++) {
+			List<Map<String, Object>> products = new ArrayList<Map<String,Object>>();
+			for(int i = 0; i < arr.length(); i++) {
 				JSONObject obj = arr.getJSONObject(i);
-				products.add(obj.toMap());	// JSONObject obj를 Map으로 바꿔서 List에 저장하기
+				products.add(obj.toMap());  // JSONObject obj를 Map으로 바꿔서 List에 저장하기
 			}
 			
 			System.out.println(products);
@@ -48,11 +47,11 @@ public class JSONMainClass {
 				if(br != null) {
 					br.close();
 				}
-			} catch (IOException e) {
+			} catch(IOException e) {
 				e.printStackTrace();
 			}
 		}
-				
+
 	}
 
 }

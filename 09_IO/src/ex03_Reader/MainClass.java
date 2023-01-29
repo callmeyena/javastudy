@@ -10,7 +10,7 @@ public class MainClass {	// ex02 달달달 외워벌이기~~~  ex01은 현실적
 	/*
 	 	Reader
 	 	1. 문자 기반의 입력 스트림이다. 대표로 FileReader => 근데 예외처리 달고다님
-	 	2. Reader로 끝나는 이름의 클래스는 모두 문자 기반의 입력 스트림이다.(= 글자를 보내는(출력시키는) 역할)
+	 	2. Reader로 끝나는 이름의 클래스는 모두 문자 기반의 입력 스트림이다.
 	 	3. 문자를 읽어 들이는 스트림이다.(파일의 내용을 읽는다, 서버가 보낸 내용을 읽는다.. 등등)
 	 */
 	
@@ -38,9 +38,6 @@ public class MainClass {	// ex02 달달달 외워벌이기~~~  ex01은 현실적
 				sb.append((char)c);
 			}
 			System.out.println(sb.toString());	// 외워라..... int부터 그냥 달달달 외워라...? 제대로 알자..?
-			
-	
-			
 		
 		} catch(IOException e) {				// FileNotFoundException => 읽어들일 파일이 없거나 못찾으면 생기는 오류
 												// 부모인 IOException로 인해 FileNot어쩌구 오류가 함께 처리 된다.
@@ -160,9 +157,9 @@ public class MainClass {	// ex02 달달달 외워벌이기~~~  ex01은 현실적
 	
 	
 	public static void main(String[] args) {
-//		ex01();
+		ex01();
 //		ex02();
-		ex03();
+//		ex03();
 			
 	}
 
