@@ -43,15 +43,14 @@ public class JSONMainClass {
 		} catch(IOException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if(br != null) {
+			if(br != null) {
+				try {
 					br.close();
+				} catch(IOException e) {
+					e.printStackTrace();
 				}
-			} catch(IOException e) {
-				e.printStackTrace();
 			}
 		}
-
 	}
 
 }
