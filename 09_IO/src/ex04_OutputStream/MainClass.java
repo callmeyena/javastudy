@@ -23,7 +23,7 @@ public class MainClass {
 		
 		try {
 			
-			fos = new FileOutputStream(file);	// 파일의 연결된 출력 통로(stream)의 이름이 fos / int or byte[]타입만 출력 가능
+			fos = new FileOutputStream(file);	// 파일의 연결된 출력 통로(stream)의 이름이 fos => int or byte[]타입만 출력 가능
 			
 			// 출력단위
 			// 1. int: 1개
@@ -68,7 +68,7 @@ public class MainClass {
 			byte[] b = str.getBytes(StandardCharsets.UTF_8);	// UTF-8로 만들어서 인코딩 해주세요 라는 뜻 ㅋ charset = UTF-8 = 한 글자에 3바이트 
 			
 			// 2번 방법: getBytes(String charsetName)
-			// byte[] b = str.getbytes("UTF-8");
+			// byte[] b = str.getbytes("UTF-8"); // 추천 ㅋ 이거 무족권 무족권이야
 			
 			fos.write(b);
 
