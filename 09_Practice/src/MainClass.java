@@ -1,9 +1,15 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -243,7 +249,7 @@ public class MainClass {
 
 	// 문제 6. C:\storage\diary.txt파일을 C:\diary.txt 파일로 이동하시오.
 	// 파일을 이동하면 기존의 원본은 삭제하면 된다 그거 처음에 우리가 배웠던거 예나야 이것도 못하면 넌 어제오늘 한게 없다..
-	public static void ex09() throws IOException {
+	public static void ex09() {
 		
 		File dir = new File("C:" + File.separator + "storage");
 	 	if(dir.exists() == false) {
@@ -285,7 +291,6 @@ public class MainClass {
 		
 		File file2 = new File(dir2, "diary.txt");
 		if(file2.exists() == false) {
-			file2.createNewFile();
 		}
 		
 		PrintWriter out = null;
@@ -298,16 +303,95 @@ public class MainClass {
 		} catch(IOException e) {
 			e.printStackTrace();
 		} 
-				
-		
-		
-	
 			
+	}
 
+	
+	// 문제 7. System.in은 키보드로부터 바이트 데이터를 입력 받는 InputStream이다.
+	// System.in으로부터 문장 1개를 입력 받아서 출력 하시오. 
+	// Scanner 대신 BufferedReader를 사용하시오.
+	// 바이트 스트림을 문자 스트림을 바꾼 뒤에 문자를 푼다 뭐야 선생님 시간 더줘요 ㅋ 모잘라요 ㅋ
+	public static void ex10() {
 		
+		BufferedReader br = null;
+		
+		try {
+			
+			br = new BufferedReader(new InputStreamReader(System.in));
+			
+			System.out.print("문장 입력 >>> ");
+			String sentence = br.readLine();
+			
+			System.out.println("입력 된 문장: " + sentence);
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		
 	} //
+
+	// 문제8. 키보드로부터 하나의 문장을 입력 받은 뒤 C:\storage\ex08.txt 파일에 출력하시오
+	// Scanner와 DataOutPutStream을 사용하시오
+	public static void ex11() {
+
+		
+	
+		
+		
+		
+		
+	}
+	
+	
+	// 문제9. C:\GDJ61\installer\Java PPT.zip 파일을 
+	// C:\storage\Java PPT.zip으로 복사하시오.
+	public static void ex12() {
+		
+		String sep = File.separator;
+		
+		File from = new File("C:" + sep + "GDJ61" + sep + "installer", "JavaPPT.zip");		
+
+		File to = new File("C:" + sep + "storage", "J.zip");
+		if(to.exists() == false) {
+			to.mkdirs();
+		}
+		
+		BufferedInputStream bin = null;
+		BufferedOutputStream bout = null;
+		
+		try {
+			
+			bin = new BufferedInputStream(new FileInputStream(from));
+			bout = new BufferedOutputStream(new FileOutputStream(to));
+			
+			byte[] b = new byte[1024]; // 1킬로 바이트
+			int readByte = 0;
+			while((readByte = bin.read(b)) != -1) {
+				bout.write(b, 0, readByte);			// 배열 b의 인덱스 0부터 readByte 개 데이터를 사용한다.
+			}
+			System.out.println("복사 완료 되었습니다.");
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(bout != null) {bout.close();}
+				if(bin != null) {bin.close();}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	}
 	
 	public static void main(String[] args) throws IOException { // main 메소드를 호출하는 곳으로 예외처리를 넘긴다.(개발자가 try-catch 하지 않겠다.)
 //		ex01();
@@ -319,7 +403,10 @@ public class MainClass {
 //		ex05();
 //		ex07();
 //		ex08();
-		ex09();
+//		ex09();
+//		ex10();
+//		ex11();
+		ex12();
 		
 	}
 

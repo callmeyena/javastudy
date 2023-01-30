@@ -156,11 +156,11 @@ public class JSONMainClass { // 조낸 중요...힝입니다............ㅠ개�
 		 List<Map<String, Object>> products = Arrays.asList(product1, product2, product3);
 		 
 		 JSONArray arr = new JSONArray(products);
-		 System.out.println(arr.toString());
-//		 String content = arr.toString();
+		 String content = arr.toString();
 		 
 		 
 		 File dir = new File("C:" + File.separator + "storage");
+		 
 		 if(dir.exists() == false) {
 			 dir.mkdirs();
 		 }
@@ -168,9 +168,8 @@ public class JSONMainClass { // 조낸 중요...힝입니다............ㅠ개�
 		 File file = new File(dir, "product.json");
 		 
 		 try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-			 bw.write(arr.toString()); 
-			 
-			 System.out.println("완료");
+			 bw.write(content); 
+
 		 } catch(IOException e) {
 			 e.printStackTrace();
 		 }
