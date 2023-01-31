@@ -153,7 +153,7 @@ public class MainClass {
 		BufferedReader br = null;	
 		
 		try {
-			br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(file))); // FileInputSteam: byte타입을 받는 스트림, InputStreamReader: 문자열로 변환
 			
 			String line = null;
 			StringBuilder sb = new StringBuilder();
@@ -251,13 +251,13 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-//		ex01();
+		ex01();
 //		ex02();
 //		ex02_comlete();
 //		ex03();
 //		ex03_complete();
 //		ex04();
-		ex05();
+//		ex05();
 		
 		
 	}

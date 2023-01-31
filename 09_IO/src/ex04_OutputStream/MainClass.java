@@ -94,7 +94,6 @@ public class MainClass {
 		File dir = new File("C:" + File.separator + "storage");
 		File file = new File(dir, "ex03.bin");
 		
-		FileOutputStream fos = null;
 		BufferedOutputStream bos = null;
 		
 		try {
