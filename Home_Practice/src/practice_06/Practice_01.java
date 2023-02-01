@@ -23,6 +23,17 @@ public class Practice_01 {
 		
 	}
 	
+	
+	// 문제6. 4계절이 저장되어 있는 영한 사전(2차원 배열)을 이용하여 문제를 해결하시오.
+		// 예시)
+		// 봄을 영어로 하면? >>> spring
+		// 정답
+		// 여름을 영어로 하면? >>> sumer
+		// 오답
+		// 가을을 영어로 하면? >>> fall
+		// 정답
+		// 겨울을 영어로 하면? >>> win
+		// 오답
 	public static void ex01() {
 		
 		/*
@@ -51,11 +62,13 @@ public class Practice_01 {
 			}
 		}
 		sc.close();
+		
+	
 	}
 
 	public static void main(String[] args) {
-//		ex01();
-		ex02();
+		ex01();
+//		ex02();
 		
 		
 	}
