@@ -136,18 +136,38 @@ public class MainClass {
 	}
 	
 	public static void ex06() {
-		// 문제3. C:\storage 디렉터리를 삭제하시오
-		// 파일이 저장된 디렉터리는 지워지지 않으므로 먼저 디렉터리에 저장된 파일을 삭제해야 한다.
+		// 문제6. C:\storage\diary.txt 파일을 C:\storage2\diary.txt 파일로 이동하시오.
+		// 이동에 소요된 시간을 출력하시오.
 
-		File dir = new File("C:" + File.separator + "storage");
+		File from = new File("C:" + File.separator + "storage", "diary.txt");
 		
-		File file = new File(dir, "myfile.txt");
-		if(file.exists()) {
-			file.delete();
+		File toDir = new File("C:" + File.separator + "storage2");
+		if(toDir.exists() == false) {
+			toDir.mkdirs();
 		}
+		File to = new File(toDir, from.getName());
 		
-		if(dir.exists()) {
-			dir.delete();	
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		
+		try {
+			br = new BufferedReader(new FileReader(from));
+			bw = new BufferedWriter(new FileWriter(to));
+			
+			String line = null;
+			while((line = br.readLine()) != null) {
+				bw.write(line);
+				bw.newLine();
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(bw != null) {bw.close();}
+				if(br != null) {br.close();}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}
@@ -424,14 +444,14 @@ public class MainClass {
 //		ex03();
 //		ex04();
 //		ex05();
-//		ex06();
+		ex06();
 //		ex05();
 //		ex07();
 //		ex08();
 //		ex09();
 //		ex10();
 //		ex11();
-		ex12();
+//		ex12();
 		
 	}
 
