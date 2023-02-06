@@ -2,6 +2,7 @@ package io_practice;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -21,9 +22,20 @@ public class MainClass {
 			br = new BufferedReader(new InputStreamReader(System.in));
 			
 			System.out.print("문장 입력 >>> ");
-		
+			String sentence = br.readLine();
+			
+			System.out.println("입력 된 문장: "  + sentence);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
-		
 		
 	}
 	
