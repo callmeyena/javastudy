@@ -11,10 +11,28 @@ import java.net.URLEncoder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/* 
+	JSON
+	-네트워크를 통해 데이터를 주고받는 데 자주 사용되는 경량의 데이터 형식  
+	-정해진 문법에 맞게 데이터를 담아 전달하게 되면 전달 받은 사람은 파싱하여 데이터들을 쉽게 꺼내서 사용할 수 있도록 도와주는 것이다. 
+
+	파싱 : 다른 형식으로 저장된 데이터를 원하는 형식의 데이터로 변환하는 것. 
+*/
+
+
 public class JSONMainClass {
 	
 	public static void ex01() {
-		
+	
+	/*
+		한국환경공단_에어코리아_대기오염정보 : 시도별 실시간 측정정보 조회
+		1. 서비스 URL : http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty
+		2. 요청 변수(Request Parameter)
+			1) serviceKey : 인증키
+			2) returnType : xml 또는 json
+			3) sidoName : 시도 이름
+	*/
+		//apiURL은 홈페이지 내의 '요청주소' 확인할 것, 서비스키는 일반인증키로 진행할 것. 
 		String serviceKey = "V1ZK022TM9GGs2XJ7sSMDYk96j604sERtTiWDwdidJi2F+juYRL98yvX55ovOn5gygCQs6e33EDBB1cqdDRuwQ==";
 		String apiURL = "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
 		URL url = null;
@@ -85,6 +103,15 @@ public class JSONMainClass {
 	
 	public static void ex02() {
 		
+	/*
+		한국환경공단_에어코리아_대기오염정보 : 시도별 실시간 측정정보 조회
+		1. 서비스 URL : http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMinuDustWeekFrcstDspth
+		2. 요청 변수(Request Parameter)
+			1) serviceKey : 인증키
+			2) returnType : xml 또는 json
+			3) searchDate : 통보시간 검색
+	*/
+		
 		String serviceKey = "V1ZK022TM9GGs2XJ7sSMDYk96j604sERtTiWDwdidJi2F+juYRL98yvX55ovOn5gygCQs6e33EDBB1cqdDRuwQ==";
 		String apiURL = "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMinuDustWeekFrcstDspth";
 		URL url = null;
@@ -140,8 +167,8 @@ public class JSONMainClass {
 	}
 	
 	public static void main(String[] args) {
-//		ex01();
-		ex02();
+		ex01();
+//		ex02();
 	}
 
 }

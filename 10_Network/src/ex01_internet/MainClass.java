@@ -240,8 +240,8 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-//		ex01();
-		ex02();
+		ex01();
+//		ex02();
 //		ex03();
 //		ex04();
 //		ex05();
