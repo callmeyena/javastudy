@@ -89,7 +89,7 @@ public class ContactDAO {
 			ps.setString(2, contact.getTel()); // contact 객체가 가진 번호 가져오기
 			ps.setString(3, contact.getEmail()); // contact 객체가 가진 이메일 가져오기
 			ps.setString(4, contact.getAddress()); // contact 객체가 가진 주소 가져오기
-			res = ps.executeUpdate();
+			res = ps.executeUpdate();				// executeUpdate가 자동으로 커밋 해준다. => 따로 커밋할 필요 없음
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -125,7 +125,7 @@ public class ContactDAO {
 	// 2. 매개변수: String name 변수에는 조회 할 연락처의 이름이 저장되어 있다.
 	public List<ContactDTO> selectContactsByName(String name) {
 		
-		List<ContactDTO> contactList = new ArrayList<ContactDTO>();
+		List<ContactDTO> contactList = new ArrayList<ContactDTO>();		// 조회시에는 정보가 없을 수도 있고, 여러개 일 수도 있기 때문에 ArrayList를 선언해서 list안에 객체를 넣어준다.
 		
 		try {
 			

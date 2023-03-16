@@ -103,22 +103,22 @@ public class MainClass {
 	
 	public static Connection getConnection() { 		// 파일로 아이디 비번을 옮기고, 소스코드에서는 지워버리는거 구현 ㅋ 
 		
-		Connection con = null;
+		Connection con = null;									// 예외처리 할거기 때문에 null주기
 		
 		try {
 			
-			Class.forName("oracle.jdbc.OracleDriver");
+			Class.forName("oracle.jdbc.OracleDriver");			// 클래스 로드(.forName)
 			
-			Properties properties = new Properties();
-			properties.load(new BufferedReader(new FileReader("db.properties")));
+			Properties properties = new Properties();			// prperties를 저장하기 위해 properties객체 생성
+			properties.load(new BufferedReader(new FileReader("db.properties")));	// db.properties에 있는 파일 내용 읽고, properties에 저장
 			
-			con = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("user"), properties.getProperty("password"));
+			con = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("user"), properties.getProperty("password"));	// DriveManager클래스에서 .getConnection메소드 사용하여 각 property호출해서 value값 저장)
 			
-		} catch(Exception e) { 		// ClassNotFoundException, SQLException, IOException
+		} catch(Exception e) { 		// ClassNotFoundException, SQLException, IOException		// 예외처리 닫기
 			e.printStackTrace();
 		} 
 		
-		return con;
+		return con;					// getConnection 메소드를 호출하면 그 값으로 con을 리턴한다.
 		
 	}
 	
