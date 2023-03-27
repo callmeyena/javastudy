@@ -9,7 +9,7 @@ package ex05_upcasting;
 	/*	업캐스팅의 장점
 	 	1. 하나의 클래스로 여러가지 객체를 저장할 수 있다.
 	 	2. 부모 타입으로 모든 자식 객체를 저장할 수 있다. 최고의 장점 ㅋ ex) Person[] 타입에 Alba, Student 을 저장 할 수 있다. wow 관리하기 쌉용이
-	 	// ex) Person person = new Studet(); 자식을 부모 타입에 저장할 수 있다.
+	 	// ex) Person person = new Student(); 자식을 부모 타입에 저장할 수 있다.
 	 */
 	
 	/*

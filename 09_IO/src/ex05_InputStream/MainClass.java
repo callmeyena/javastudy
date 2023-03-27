@@ -13,8 +13,11 @@ import java.util.List;
 import ex04_OutputStream.Person;
 
 public class MainClass {
+
 	
 	public static void ex01() {
+		
+		// 글자가 깨지지 않기 위해서 inputstream 일때는 inputstreamreader / outstream일 때는 getbytes를 이용한다.
 		
 		File file = new File("C:" + File.separator + "storage", "ex01.bin");
 		

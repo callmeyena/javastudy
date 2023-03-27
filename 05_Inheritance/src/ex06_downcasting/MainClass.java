@@ -29,7 +29,7 @@ public class MainClass {
 		// 캐스팅은 
 		student.eat();
 		student.sleep();
-		student.study(); // 오류가 발생하는 부분: person은 student가 없기 때문에
+		student.study(); // 오류가 발생하는 부분: person은 student의 study기능(메소드)이 없기 때문에 오류가 발생한다.
 	}
 
 	
@@ -59,8 +59,8 @@ public class MainClass {
 		
 	}
 	public static void main(String[] args) {
-//		ex02();
-		ex03();
+		ex02();
+//		ex03();
 
 		
 		

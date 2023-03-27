@@ -179,7 +179,7 @@ public class Ex01_String {
 		System.out.println(idx2);
 	}
 	
-	public static void startsWith() {
+	public static void startsWith() { // 별로 안 중요
 		
 		// startsWith
 		// 문자열이 지정된 정규식 패턴(Regular Expression)으로 시작하면 true 반환 아니면 false 반환

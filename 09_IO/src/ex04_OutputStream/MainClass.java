@@ -131,7 +131,7 @@ public class MainClass {
 		
 		try {
 			
-			dos = new DataOutputStream(new FileOutputStream(file));
+			dos = new DataOutputStream(new FileOutputStream(file)); // 변수 자체로 가져오는(출력하는) DataOutputStream
 			
 			// 출력할 변수
 			String name = "에밀리";	// 9바이트
